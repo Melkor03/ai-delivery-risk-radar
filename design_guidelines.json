@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "name": "E1",
+    "persona": "The Anti-AI Designer",
+    "principles": [
+      "Fusion over Imitation: Mix tactical precision with luxury depth.",
+      "Emotion First: The user should feel in command, alert, and capable.",
+      "Content is King: Data is the hero. Legibility is the superpower.",
+      "Negative Space: Dense data needs breathing room to be scannable.",
+      "Contrast: High contrast for signals (Red/Green), subtle for structure."
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Manrope",
+        "weights": ["400", "600", "800"],
+        "usage": "Page titles, Card headers, KPI values"
+      },
+      "body": {
+        "family": "IBM Plex Sans",
+        "weights": ["400", "500"],
+        "usage": "General text, descriptions, narratives"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": ["400"],
+        "usage": "Risk scores, IDs, Data tables, timestamps"
+      }
+    },
+    "rules": [
+      "Headings > 32px must use tracking-tight.",
+      "Labels/Overlines must be Uppercase + tracking-widest + text-xs.",
+      "Never use Inter for headings."
+    ]
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": {
+        "default": "#09090B",
+        "paper": "#18181B",
+        "subtle": "#27272A"
+      },
+      "primary": {
+        "main": "#F8FAFC",
+        "foreground": "#09090B",
+        "description": "High contrast white for primary actions"
+      },
+      "risk_levels": {
+        "high": "#EF4444",
+        "medium": "#F59E0B",
+        "low": "#10B981",
+        "neutral": "#64748B"
+      },
+      "accents": {
+        "radar_scan": "#3B82F6",
+        "border_glow": "rgba(255,255,255,0.1)"
+      },
+      "text": {
+        "primary": "#F8FAFC",
+        "secondary": "#A1A1AA",
+        "muted": "#52525B"
+      }
+    },
+    "gradients": {
+      "risk_high": "linear-gradient(135deg, #EF4444 0%, #7F1D1D 100%)",
+      "risk_medium": "linear-gradient(135deg, #F59E0B 0%, #78350F 100%)",
+      "risk_low": "linear-gradient(135deg, #10B981 0%, #064E3B 100%)"
+    }
+  },
+  "visual_enhancers": {
+    "styles": [
+      {
+        "name": "The Tracing Beam",
+        "usage": "Critical Risk Cards",
+        "css_rule": "border with moving gradient mask or glowing edge",
+        "description": "A subtle glowing line that travels around the border of high-risk items to draw attention without screaming."
+      },
+      {
+        "name": "Grid Borders",
+        "usage": "Main Dashboard Table/Lists",
+        "css_rule": "border-r border-b border-border/40",
+        "description": "Visible grid lines for data density. Create a 'Technical/Blueprint' feel."
+      },
+      {
+        "name": "Glassmorphism (Crystal)",
+        "usage": "Sticky Headers, Floating Actions",
+        "css_rule": "bg-black/60 backdrop-blur-xl border-b border-white/10",
+        "description": "High clarity glass, not muddy."
+      }
+    ],
+    "radius": "rounded-md",
+    "shadows": "shadow-lg shadow-black/50"
+  },
+  "layout": {
+    "grid_system": {
+      "dashboard": "Mode B: High Density Grid (gap-4, grid-cols-1 md:grid-cols-4)",
+      "project_detail": "Mode A: Tetris Grid (Asymmetric, gap-8)",
+      "rules": [
+        "Mobile first: grid-cols-1.",
+        "Dashboard widgets must stretch (h-full).",
+        "Use 'subgrid' if nesting is complex."
+      ]
+    },
+    "spacing": {
+      "base": "p-6",
+      "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      "section_gap": "gap-8"
+    }
+  },
+  "components": {
+    "shadcn_overrides": [
+      "Card: Remove generic shadows, use 1px border-white/10 + bg-zinc-900.",
+      "Button: Primary = White bg, Black text. Secondary = Zinc-800 bg, White text.",
+      "Input: Zinc-900 bg, Zinc-700 border. Focus: Ring-2 Ring-white/20.",
+      "Badge: Use 'outline' variant with specific risk colors (text-red-500 border-red-500/50)."
+    ],
+    "custom_components": [
+      {
+        "name": "RiskRadarChart",
+        "type": "Data Viz",
+        "library": "Recharts RadarChart",
+        "description": "A hex-radar chart showing the 6 dimensions of risk (Scope, Dependency, Reporting, Quality, Burnout, Vendor)."
+      },
+      {
+        "name": "RiskTrendCard",
+        "type": "Card",
+        "description": "Small card with sparkline showing risk score trend over last 3 sprints."
+      },
+      {
+        "name": "NarrativeBlock",
+        "type": "Content",
+        "description": "AI-generated text block with 'Typewriter' effect or clean typography for the risk narrative."
+      }
+    ]
+  },
+  "images": {
+    "avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1562228802-4b1052d0f845?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MDIwMjg2N3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Project Lead - Helmet (Use as placeholder for anonymity or replace)"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MDIwMjg2N3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Delivery Manager - Man Smiling"
+      },
+      {
+        "url": "https://images.pexels.com/photos/30004324/pexels-photo-30004324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Executive - Woman in Black"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MDIwMjg2N3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Team Member - Grey Jacket"
+      }
+    ],
+    "project_thumbnails": [
+      {
+        "url": "https://images.unsplash.com/photo-1759159347827-de3a54002de7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMHRlY2hub2xvZ3klMjBnZW9tZXRyaWMlMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzAyODc2MDZ8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Project Alpha - Dark Cubes"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1737505598998-693328b57ae3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2hub2xvZ3klMjBnZW9tZXRyaWMlMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzAyODc2MDZ8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Project Beta - Abstract B&W"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "INSTALLATION: Run 'yarn add recharts lucide-react sonner clsx tailwind-merge' if not present.",
+    "FONTS: Add imports for Manrope and IBM Plex Sans in index.css (Google Fonts).",
+    "THEME: Force Dark Mode. The app should not even have a light mode toggle. It is an Enterprise Tool.",
+    "NAVIGATION: Sidebar navigation is preferred for 'Command Center' feel. Collapsible.",
+    "RADAR: The 'Delivery Risk Radar' is the core. Use Recharts RadarChart for the Overview.",
+    "AI NARRATIVE: Use a distinct visual container for AI text (e.g., a card with a subtle left border in the risk color).",
+    "DATA UPLOAD: Make the drag-and-drop zone look technical (dashed border, mono font).",
+    "NOTIFICATIONS: Use Sonner for in-app toasts.",
+    "ACCESSIBILITY: Ensure Red/Green colors have distinct values or icons associated for colorblind users."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients for backgrounds. Use solid colors + noise/grain if needed.",
+    "Do not center align the app container.",
+    "Every interaction needs micro-animations (hover, active, focus).",
+    "Use data-testid for all interactive elements.",
+    "Use 'sonner' for toasts.",
+    "Export components as named exports.",
+    "Pages as default exports."
+  ]
+}
