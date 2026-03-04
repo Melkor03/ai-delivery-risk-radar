@@ -12,7 +12,7 @@ from typing import List, Optional, Dict, Any
 import uuid
 from datetime import datetime, timezone, timedelta
 from jose import JWTError, jwt
-from passlib.context import CryptContext
+import bcrypt as _bcrypt_lib
 import json
 import csv
 import io
@@ -31,7 +31,7 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 
 # Password hashing
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
 
 # Security
 security = HTTPBearer()
@@ -139,10 +139,10 @@ class JiraConfigCreate(BaseModel):
 # ============== AUTH HELPERS ==============
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+    return _bcrypt_lib.checkpw(plain_password.encode(), hashed_password.encode())
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    return _bcrypt_lib.hashpw(password.encode(), _bcrypt_lib.gensalt(12)).decode()
 
 def create_access_token(data: dict) -> str:
     to_encode = data.copy()
